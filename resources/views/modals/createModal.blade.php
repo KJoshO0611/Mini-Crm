@@ -14,15 +14,16 @@
                         @csrf
                         <div class="form-group">
                             <label for="employeeName">Employee's First Name</label>
-                            <input type="text" class="form-control" id="employeeName"  name="firstname">
+                            <input type="text" class="form-control" id="employeeName"  name="firstname" placeholder="John">
                         </div>
                         <div class="form-group">
                                 <label for="employeeName">Employee's Last Name</label>
-                                <input type="text" class="form-control" id="employeeName"  name="lastname" >
+                                <input type="text" class="form-control" id="employeeName"  name="lastname" placeholder="Doe">
                         </div>
                         <div class="form-group">
                                 <label for="employeeName">Employee's Company</label>
                                 <select name="company" id="company" class="form-control">
+                                        <option selected disabled>Please Select one</option>
                                     @foreach ($companies as $company)
                                         <option value="{{$company->id}}">{{$company->name}}</option>
                                     @endforeach
@@ -30,11 +31,16 @@
                         </div>
                         <div class="form-group">
                             <label for="employeesEmail">Employee's Email</label>
-                            <input type="email" class="form-control" id="employeesEmail" name="email" ">
+                            <input type="email" class="form-control" id="employeesEmail" name="email" placeholder="Sample@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="EmployeePhone">Employee's Phone Number</label>
-                            <input type="text" class="form-control" id="EmployeePhone" name="phone" ">
+                                <label for="EmployeePhone">Employee's Phone Number</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">+63</span>
+                                    </div>
+                                <input type="text" class="form-control" id="EmployeePhone" name="phone" placeholder="9xxxxxxxxx" maxlength="10" onkeypress="return isNumber(event)">
+                            </div>
                         </div>
                 </div>
                     <div class="modal-footer">

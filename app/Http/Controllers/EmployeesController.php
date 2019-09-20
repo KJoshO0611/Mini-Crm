@@ -16,7 +16,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $companies = DB::table('companies')->get();
+        $companies = DB::table('companies')->OrderBy('name','ASC')->get();
 
         return view('employees.index',compact('companies'));
     }
@@ -43,6 +43,7 @@ class EmployeesController extends Controller
 
             'firstname' => 'required',
             'lastname' => 'required',
+            'company'=>'required',
             'email' => 'required|unique:employees,email',
             'phone' => 'required|unique:employees,phone',
         ];
@@ -50,6 +51,7 @@ class EmployeesController extends Controller
         $customMessages = [
             'firstname.required' => 'Please Enter A First Name',
             'lastname.required' => 'Please Enter A Last Name',
+            'company.required'=>'Please Select A Company',
             'email.required' => 'Please Enter An Email',
             'email.unique'=>'Email Already Exists',
             'phone.required' => 'Please Enter A Phone Number',
@@ -63,7 +65,7 @@ class EmployeesController extends Controller
             'last_name' => $request->input('lastname'),
             'company_id'=>$request->input('company'),
             'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
+            'phone' => '+63'.$request->input('phone'),
         ]);
 
         return back()->with('update','update');

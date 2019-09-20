@@ -13,15 +13,15 @@
                     @csrf
                     <div class="form-group">
                         <label for="CompanyName">Company name</label>
-                        <input type="text" class="form-control" id="CompanyName"  name="name">
+                        <input type="text" class="form-control" id="CompanyName"  name="name" placeholder="Sample .Inc">
                     </div>
                     <div class="form-group">
                         <label for="CompanyEmail">Company Email</label>
-                        <input type="email" class="form-control" id="CompanyEmail" name="email" >
+                        <input type="email" class="form-control" id="CompanyEmail" name="email" placeholder="Sample@company.com">
                     </div>
                     <div class="form-group">
                         <label for="CompanyWebsite">Company Website</label>
-                        <input type="text" class="form-control" id="CompanyWebsite" name="website" >
+                        <input type="text" class="form-control" id="CompanyWebsite" name="website" placeholder="CompanyWeb.com">
                     </div>
                     <div class="form-group">
                     <div class="box">
