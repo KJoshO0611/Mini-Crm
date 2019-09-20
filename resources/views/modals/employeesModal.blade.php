@@ -59,8 +59,13 @@
                         <input type="email" class="form-control" id="employeesEmail" name="email" value="{{$employees->EmpEmail}}">
                     </div>
                     <div class="form-group">
-                        <label for="EmployeePhone">Employee's Phone Number</label>
-                        <input type="text" class="form-control" id="EmployeePhone" name="phone" value="{{$employees->phone}}">
+                            <label for="EmployeePhone">Employee's Phone Number</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">+63</span>
+                                </div>
+                            <input type="text" class="form-control" id="EmployeePhone" name="phone" value="{{$employees->PhoneNumber}}" placeholder="9xxxxxxxxx" maxlength="10" onkeypress="return isNumber(event)">
+                        </div>
                     </div>
             </div>
                 <div class="modal-footer">

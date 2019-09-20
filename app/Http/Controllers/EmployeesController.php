@@ -83,9 +83,11 @@ class EmployeesController extends Controller
         $employees = DB::table('employees')
         ->leftjoin('companies','companies.id','=','employees.company_id')
         ->select('*','companies.id as ComId','employees.id as EmpId','employees.email as EmpEmail','companies.email as ComEmail')
+        ->selectRaw('TRIM("+63" From employees.phone) as PhoneNumber')
         ->where('employees.id','=',$id)
         ->first();
 
+        //dd($employees);
         $companies = DB::table('companies')->get();
 
         return view('employees.show',compact('employees','companies'));
@@ -135,7 +137,7 @@ class EmployeesController extends Controller
             'last_name' => $request->input('lastname'),
             'company_id'=>$request->input('company'),
             'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
+            'phone' => '+63'.$request->input('phone'),
         ]);
 
         return back()->with('update','update');
