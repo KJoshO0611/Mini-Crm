@@ -1,0 +1,111 @@
+.feature-1 .icon-wrapper, .person .icon-wrapper {
+    position: relative;
+    width: 96px;
+    height: 55.43px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 1;
+    margin-top: -33.94px;
+    background: rgb(255, 254, 254); }
+    .feature-1 .icon-wrapper > span, .person .icon-wrapper > span {
+      width: 96px;
+      height: 96px;
+      text-align: center;
+      font-size: 3rem;
+      line-height: 96px;
+      display: inline-block;
+      position: absolute;
+      top: -20px;
+      left: 0; }
+    .feature-1 .icon-wrapper:before, .feature-1 .icon-wrapper:after, .person .icon-wrapper:before, .person .icon-wrapper:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 67.88px;
+      height: 67.88px;
+      -webkit-transform: scaleY(0.5774) rotate(-45deg);
+      -ms-transform: scaleY(0.5774) rotate(-45deg);
+      transform: scaleY(0.5774) rotate(-45deg);
+      background-color: #0984e3;
+      left: 14.06px; }
+    .feature-1 .icon-wrapper:before, .person .icon-wrapper:before {
+      top: -33.94px; }
+    .feature-1 .icon-wrapper:after, .person .icon-wrapper:after {
+      bottom: -33.94px; }
+
+  .feature-1 .feature-1-content, .person .feature-1-content {
+    padding: 50px 20px 20px 20px;
+    text-align: center;
+    background-color: #fff;}
+    .feature-1 .feature-1-content h2, .person .feature-1-content h2 {
+      font-size: 1.3rem;
+      color: #000; }
+
+    .feature-1 {
+        background-color: #fff;
+    }
+
+  .person {
+    margin-bottom: 50px !important; }
+    .person img {
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto; }
+
+      .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+      .inputfile + label {
+        max-width: 80%;
+        font-size: 1rem;
+        /* 20px */
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0.625rem 1.25rem;
+        /* 10px 20px */
+    }
+
+    .inputfile + label {
+        color: #f1e5e6;
+        background-color: #0084ff;
+    }
+
+    .inputfile:focus + label,
+    .inputfile.has-focus + label,
+    .inputfile + label:hover {
+        background-color: #0063bf;
+    }
+
+    .no-js .inputfile + label {
+        display: none;
+    }
+
+    .inputfile + label * {
+        pointer-events: none;
+        /* in case of FastClick lib use */
+    }
+
+    .inputfile + label svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        fill: currentColor;
+        margin-top: -0.25em;
+        /* 4px */
+        margin-right: 0.25em;
+        /* 4px */
+    }
